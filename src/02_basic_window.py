@@ -1,4 +1,6 @@
 """
+ WINDOW
+========================
 Widgets are the building blocks of tkinter
 Widgets: text, buttons, checkboxes, menus, frames, ...
 
