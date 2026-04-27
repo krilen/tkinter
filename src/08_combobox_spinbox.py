@@ -10,7 +10,9 @@ With Combobox there is an unique event that can be used everytime a selection is
 
 A spinbox works simulare like a combobox.
 
-@7:52s
+Sepcial events for the spinbox when going up or down through the spinbox
+<spinbox>.bind("<<Increment>>", ...) - Going up
+<spinbox>.bind("<<Decrement>>", ...) - Going down
 
 """
 
@@ -43,10 +45,38 @@ combo2_label.pack()
 
 combo1.bind("<<ComboboxSelected>>", lambda event: print(combo1_label.configure(text=animal_var.get())))
 
-combo1_label = ttk.Label(window, text="Animal")             # Other way using lambda
+combo1_label = ttk.Label(window, text="Animal")             # Other way by using lambda
 combo1_label.pack()
 
-# Spinbox
+# Spinbox   
+spin_int = tk.IntVar(value=12)              # Start value
+
+spin1 = ttk.Spinbox(window, 
+                    from_= 3, to=20,        # Another way of defing values 3 to 20
+                    increment=3,            # step size
+                    #command=lambda: print("spin was pressed"),
+                    command=lambda: print(spin_int.get()),
+                    textvariable=spin_int
+                    )     
+#spin1["value"] = (1,2,3,4,5)               # One way of defining values
+
+# Spinbox event
+spin1.bind("<<Increment>>", lambda event: print("up"))      # Up
+spin1.bind("<<Decrement>>", lambda event: print("down"))    # Down
+spin1.pack()
+
+# Exercise
+
+spin2_letters = ("A", "B", "C", "D", "E")
+spin2_str = tk.StringVar(value=spin2_letters[-1])
+
+spin2 = ttk.Spinbox(window,
+                    textvariable=spin2_str,
+                    values=spin2_letters,
+                    )
+
+spin2.bind("<<Decrement>>", lambda event: print("Down to:", spin2_str.get()))
+spin2.pack()
 
 
 window.mainloop()
