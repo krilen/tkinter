@@ -1,6 +1,7 @@
 """
  DATA
 ========================
+
 Two ways to get data from a widget
  * Tkinter variables this should be used.
  * get method

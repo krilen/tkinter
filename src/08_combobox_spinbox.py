@@ -1,6 +1,7 @@
 """
  COMBOBOX and SPINBOX WIDGETS
 ========================
+
 Combobox is a dropdown
 Spinbox is a selection / menu where you scroll predefined value (numbers or strings)
 
