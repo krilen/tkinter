@@ -63,8 +63,8 @@ class ListFrame(ttk.Frame):
     
     def run(self):
         self.create_canvas()
-        self.create_frame()
-        self.add_events()
+        #self.create_frame()
+        #self.add_events()
         
     
     def create_canvas(self):
